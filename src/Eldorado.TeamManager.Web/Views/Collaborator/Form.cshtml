@@ -134,6 +134,57 @@
                     </div>
                 </div>
             </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Metodologia
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        @foreach (var skill in Model.Skills)
+                        {
+                            if (skill.Type == SkillType.Methodology)
+                            {
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="@skill.Id" name="skills">
+                                    <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                </div>
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Infraestrutura DevOps
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        @foreach (var skill in Model.Skills)
+                        {
+                            if (skill.Type == SkillType.DevOpsInfrastructure)
+                            {
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" value="@skill.Id" name="skills">
+                                    <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                </div>
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
 
         <div class="col-12">
