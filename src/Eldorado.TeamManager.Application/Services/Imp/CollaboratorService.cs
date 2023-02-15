@@ -26,7 +26,7 @@ namespace Eldorado.TeamManager.Application.Services.Imp
 
         public async Task Create(CollaboratorDto dto)
         {
-            var collaborator = new Collaborator(dto.Name, dto.RG, dto.BirthDate, dto.Email, dto.Observation, ConvertCollaboratorSkillsDto(dto.CollaboratorSkills));
+            var collaborator = new Collaborator(dto.Name, dto.RG, dto.BirthDate.Value, dto.Email, dto.Observation, ConvertCollaboratorSkillsDto(dto.CollaboratorSkills));
 
             await _collaboratorRepository.Create(collaborator);
         }
@@ -34,7 +34,7 @@ namespace Eldorado.TeamManager.Application.Services.Imp
         public async Task Update(CollaboratorDto dto)
         {
             var collaborator = _collaboratorRepository.GetById(dto.Id).Result;
-            collaborator.Edit(dto.Name, dto.RG, dto.BirthDate, dto.Email, dto.Observation, ConvertCollaboratorSkillsDto(dto.CollaboratorSkills));
+            collaborator.Edit(dto.Name, dto.RG, dto.BirthDate.Value, dto.Email, dto.Observation, ConvertCollaboratorSkillsDto(dto.CollaboratorSkills));
 
             await _collaboratorRepository.Update(collaborator);
         }

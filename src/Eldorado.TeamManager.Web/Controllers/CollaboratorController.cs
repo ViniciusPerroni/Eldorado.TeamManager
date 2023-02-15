@@ -44,7 +44,7 @@ namespace Eldorado.TeamManager.Web.Controllers
             return View("Form", viewModel);
         }
 
-        public async Task<IActionResult> Save(CollaboratorDto collaborator)
+        public async Task<IActionResult> Save(CollaboratorDto collaborator, long[] skills)
         {
             if (collaborator.Id == 0)
             {

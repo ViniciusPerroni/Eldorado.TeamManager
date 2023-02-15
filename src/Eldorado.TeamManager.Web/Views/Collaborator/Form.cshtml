@@ -1,39 +1,46 @@
 @using Eldorado.TeamManager.Domain.Enums;
 @model Eldorado.TeamManager.Web.Models.Collaborator.CollaboratorViewModel
 
-<h3 class="page-title">@(Model.Collaborator.Id == 0 ? "Novo Colaborador" : "Editar Colaborador")</h3>
+<h3 class="page-title-3">@(Model.Collaborator.Id == 0 ? "Novo Colaborador" : "Editar Colaborador")</h3>
 
-<form action="@Url.Action("Save")" method="post" class="row g-3">
+<form action="@Url.Action("Save")" method="post" class="g-3">
     <input type="hidden" name="Id" value="@Model.Collaborator.Id" />
 
-    <div class="col-md-6">
-        <div>
+
+    <div class="row">
+        <div class="col-sm-8 mb-3">
             <label class="form-label">Nome:</label>
             <input type="text" name="Name" value="@Model.Collaborator.Name" required class="form-control" />
         </div>
+    </div>
 
-        <div class="col-md-3">
+    <div class="row">
+        <div class="col-md-2 mb-3">
             <label class="form-label">Data de Nasc.:</label>
-            <input type="text" name="BirthDate" value="@Model.Collaborator.BirthDate" required class="form-control" />
+            <input type="text" name="BirthDate" value='@string.Format("{0:dd/MM/yyyy}", Model.Collaborator.BirthDate)'
+                required class="form-control" />
         </div>
-
-        <div class="col-md-4">
+        <div class="col-md-2">
             <label class="form-label">RG:</label>
             <input type="text" name="RG" value="@Model.Collaborator.RG" required class="form-control" />
         </div>
-
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label class="form-label">Email:</label>
             <input type="text" name="Email" value="@Model.Collaborator.Email" required class="form-control" />
         </div>
-
-        <div class="col-md-6">
+    </div>
+    <div class="row">
+        <div class="col-md-8 mb-4">
             <label class="form-label">Observações:</label>
-            <input type="text" maxlength="200" name="Observation" value="@Model.Collaborator.Observation" 
-                class="form-control" />
+            <textarea type="text" maxlength="200" rows="4" name="Observation"
+                class="form-control">@Model.Collaborator.Observation</textarea>
         </div>
+    </div>
 
-        <h3 class="page-title col-md-6">Skills</h3>
+
+    <h3 class="page-title-2">Skills</h3>
+
+    <div class="row col-md-8 mb-3">
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -182,19 +189,14 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
-
-
-
     </div>
 
-    <div class="col-12">
-        <button type="submit" class="btn btn-secondary"> <i class="fa fa-save"></i> Gravar</button>
-        <a href="@Url.Action("Index")" class="btn btn-outline-secondary"><i class="fa fa-left-long"></i>
-            Voltar</a>
+    <div class="row">
+        <div class="col-12 buttons-collaborator">
+            <button type="submit" class="btn btn-secondary"> <i class="fa fa-save"></i> Gravar</button>
+            <a href='@Url.Action("Index")' class="btn btn-outline-secondary"><i class="fa fa-left-long"></i>
+                Voltar</a>
+        </div>
     </div>
-
 </form>
