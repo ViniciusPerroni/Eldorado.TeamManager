@@ -29,7 +29,7 @@
 
         <div class="col-md-6">
             <label class="form-label">Observações:</label>
-            <input type="text" name="Observation" value="@Model.Collaborator.Observation" required
+            <input type="text" maxlength="200" name="Observation" value="@Model.Collaborator.Observation" 
                 class="form-control" />
         </div>
 
@@ -187,12 +187,14 @@
 
         </div>
 
-        <div class="col-12">
-            <button type="submit" class="btn btn-secondary"> <i class="fa fa-save"></i> Gravar</button>
-            <a href="@Url.Action("Index")" class="btn btn-outline-secondary"><i class="fa fa-left-long"></i>
-                Voltar</a>
-        </div>
 
+
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-secondary"> <i class="fa fa-save"></i> Gravar</button>
+        <a href="@Url.Action("Index")" class="btn btn-outline-secondary"><i class="fa fa-left-long"></i>
+            Voltar</a>
     </div>
 
 </form>
