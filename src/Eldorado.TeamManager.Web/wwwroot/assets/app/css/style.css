@@ -50,6 +50,12 @@
   border-bottom: 2px solid black;
 }
 
+.page-title-skill {
+  width: 15%;
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
 li .paginate_button .page-item .active {
   background: #6c757d !important;
 }
