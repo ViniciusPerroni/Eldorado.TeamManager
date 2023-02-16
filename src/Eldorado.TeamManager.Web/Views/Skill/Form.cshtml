@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-3">
             <label class="form-label">Tipo:</label>
-            <select class="form-select" name="Type" asp-for="@Model.Skill.Type">
+            <select class="form-select" name="Type" asp-for="@Model.Skill.Type" required>
                 <option value="" data-default disabled selected></option>
                 <option @(Model.Skill.Type == SkillType.DataBase ? "selected" : string.Empty) value='DataBase'>Banco
                     de Dados</option>
