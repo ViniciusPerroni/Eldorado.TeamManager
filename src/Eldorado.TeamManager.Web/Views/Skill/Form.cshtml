@@ -1,7 +1,7 @@
 @using Eldorado.TeamManager.Domain.Enums;
 @model Eldorado.TeamManager.Web.Models.Skill.SkillViewModel
 
-<h3 class="page-title-3">@(Model.Skill.Id == 0 ? "Nova Skill" : "Editar Skill")</h3>
+<h3 class="page-title-skill">@(Model.Skill.Id == 0 ? "Nova Skill" : "Editar Skill")</h3>
 
 <form action="@Url.Action("Save")" method="post" class="g-3">
     <input type="hidden" name="Id" value="@Model.Skill.Id" />
@@ -14,8 +14,9 @@
         <div class="col-md-3">
             <label class="form-label">Tipo:</label>
             <select class="form-select" name="Type" asp-for="@Model.Skill.Type">
-                <option @(Model.Skill.Type == SkillType.DataBase ? "selected" : string.Empty) value='DataBase'>Banco de
-                    Dados</option>
+                <option value="" data-default disabled selected></option>
+                <option @(Model.Skill.Type == SkillType.DataBase ? "selected" : string.Empty) value='DataBase'>Banco
+                    de Dados</option>
                 <option @(Model.Skill.Type == SkillType.ProgrammingLanguage ? "selected" : string.Empty)
                     value='ProgrammingLanguage'>Linguagem de Programação</option>
                 <option @(Model.Skill.Type == SkillType.SoftwareTools ? "selected" : string.Empty)
@@ -28,7 +29,6 @@
                     Metodologia</option>
                 <option @(Model.Skill.Type == SkillType.DevOpsInfrastructure ? "selected" : string.Empty)
                     value='DevOpsInfrastructure'>Infraestrutura DevOps</option>
-
             </select>
         </div>
     </div>
