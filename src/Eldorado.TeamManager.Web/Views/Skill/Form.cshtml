@@ -36,15 +36,15 @@
     <div class="row">
         <div class="col-md-8 mb-4">
             <label class="form-label">Descrição:</label>
-            <textarea type="text" maxlength="150" rows="3" name="Description"
+            <textarea type="text" maxlength="145" rows="3" name="Description"
                 class="form-control">@Model.Skill.Description</textarea>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12">
-            <button type="submit" class="btn btn-secondary"> <i class="fa fa-save"></i> Gravar</button>
-            <a href='@Url.Action("Index")' class="btn btn-outline-secondary"><i class="fa fa-left-long"></i> Voltar</a>
+        <div class="col-8 buttons-skill">
+            <a href='@Url.Action("Index")' class="btn btn-outline-secondary"><i class="fa fa-left-long"></i>Voltar </a>
+            <button type="submit" class="btn btn-secondary"><i class="fa fa-save"></i> Gravar</button>
         </div>
     </div>
 </form>
