@@ -50,25 +50,24 @@
                 Voltar</a>
         </div>
     </div>
-
-
-
 </form>
 
-
 <script>
-
     function Validate() {
         const form = document.getElementById("form");
         const inputedNameSkill = document.getElementById("name-skill").value
         const inputedDescription = document.getElementById("description").value
 
+        if (inputedNameSkill == " " || inputedDescription == " ") {
+
+            event.preventDefault();
+            alert("Preencha os campos corretamente");
+        }
+
         form.addEventListener("submit", function (event) {
             document.getElementById("name-skill").value = inputedNameSkill.trim();
-            document.getElementById("description").value = inputedDescription.trim();           
+            document.getElementById("description").value = inputedDescription.trim();
         });
-
     }
-
 </script>
 
