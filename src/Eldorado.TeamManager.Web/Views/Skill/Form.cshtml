@@ -3,13 +3,13 @@
 
 <h3 class="page-title-skill">@(Model.Skill.Id == 0 ? "Nova Skill" : "Editar Skill")</h3>
 
-<form action="@Url.Action("Save")" method="post" class="g-3">
+<form id="form" action="@Url.Action("Save")" method="post" class="g-3">
     <input type="hidden" name="Id" value="@Model.Skill.Id" />
 
     <div class="row mb-3">
         <div class="col-md-5">
             <label class="form-label">Nome:</label>
-            <input type="text" name="Name" value="@Model.Skill.Name" required class="form-control" />
+            <input type="text" name="Name" value="@Model.Skill.Name" required class="form-control" id="name-skill" />
         </div>
         <div class="col-md-3">
             <label class="form-label">Tipo:</label>
@@ -36,15 +36,39 @@
     <div class="row">
         <div class="col-md-8 mb-4">
             <label class="form-label">Descrição:</label>
-            <textarea type="text" maxlength="150" rows="3" name="Description"
+            <textarea id="description" type="text" maxlength="150" rows="3" name="Description"
                 class="form-control">@Model.Skill.Description</textarea>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12">
-            <button type="submit" class="btn btn-secondary"> <i class="fa fa-save"></i> Gravar</button>
-            <a href='@Url.Action("Index")' class="btn btn-outline-secondary"><i class="fa fa-left-long"></i> Voltar</a>
+            <button type="submit" class="btn btn-secondary" id="buttonSubmitForm" OnClick="Validate()"> <i
+                    class="fa fa-save"></i>
+                Gravar</button>
+            <a href='@Url.Action("Index")' class="btn btn-outline-secondary"><i class="fa fa-left-long"></i>
+                Voltar</a>
         </div>
     </div>
+
+
+
 </form>
+
+
+<script>
+
+    function Validate() {
+        const form = document.getElementById("form");
+        const inputedNameSkill = document.getElementById("name-skill").value
+        const inputedDescription = document.getElementById("description").value
+
+        form.addEventListener("submit", function (event) {
+            document.getElementById("name-skill").value = inputedNameSkill.trim();
+            document.getElementById("description").value = inputedDescription.trim();           
+        });
+
+    }
+
+</script>
+
