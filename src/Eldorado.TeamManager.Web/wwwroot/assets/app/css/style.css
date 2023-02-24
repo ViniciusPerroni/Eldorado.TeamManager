@@ -63,3 +63,8 @@ li .paginate_button .page-item .active {
 .buttons-collaborator {
   margin-bottom: 10%;
 }
+
+.buttons-skill {
+  display: flex;
+  flex-direction: row-reverse;
+}
