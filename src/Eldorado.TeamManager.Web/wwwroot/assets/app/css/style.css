@@ -68,3 +68,9 @@ li .paginate_button .page-item .active {
   display: flex;
   flex-direction: row-reverse;
 }
+
+.buttton-nova-skill {
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

@@ -58,10 +58,9 @@
         const inputedNameSkill = document.getElementById("name-skill").value
         const inputedDescription = document.getElementById("description").value
 
-        if (inputedNameSkill == " " || inputedDescription == " ") {
-
+        if (inputedNameSkill.trim().length === 0 || inputedDescription.trim().length === 0) {
             event.preventDefault();
-            alert("Preencha os campos corretamente");
+            alert("Os campos não podem ser vazios!");
         }
 
         form.addEventListener("submit", function (event) {
