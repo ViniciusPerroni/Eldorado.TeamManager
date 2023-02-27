@@ -69,6 +69,7 @@ li .paginate_button .page-item .active {
   flex-direction: row-reverse;
   flex: 0 0 auto;
   width: 66.66666667%;
+  margin-left: 7px;
 }
 
 .buttton-nova-skill {
