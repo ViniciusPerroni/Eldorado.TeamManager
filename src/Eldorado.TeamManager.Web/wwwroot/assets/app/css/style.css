@@ -64,7 +64,7 @@ li .paginate_button .page-item .active {
   margin-bottom: 10%;
 }
 
-.button-skill {
+.buttons-lixeira-voltar {
   display: flex;
   flex-direction: row-reverse;
   flex: 0 0 auto;
