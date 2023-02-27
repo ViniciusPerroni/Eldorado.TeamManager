@@ -1,7 +1,7 @@
 ﻿@using Eldorado.TeamManager.Domain.Enums;
 @model Eldorado.TeamManager.Web.Models.User.UserViewModel
 
-<h3 class="page-title"><i class="fa fa-gear"></i> @(Model.User.Id == 0 ? "Novo Usuário" : "Editar Usuário") </h3>
+<h3 class="page-title"></i> @(Model.User.Id == 0 ? "Novo Usuário" : "Editar Usuário") </h3>
 
 <form action="@Url.Action("Save")" method="post" class="row g-3">
   <input type="hidden" name="Id" value="@Model.User.Id" />

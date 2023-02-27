@@ -1,6 +1,6 @@
 @model Eldorado.TeamManager.Web.Models.Skill.SkillListViewModel
 
-<h3 class="page-title"></i> Skills</h3>
+<h3 class="page-title-skill"></i> Skills</h3>
 
 @if (TempData["skillSave"] != null)
 {
@@ -17,7 +17,7 @@
     </div>
 }
 
-<a href='@Url.Action("Create")' class="btn btn-sm btn-secondary"><i class="fa fa-plus"></i> Nova Skill</a>
+<a href='@Url.Action("Create")' class="btn btn-sm btn-secondary"></i> Nova Skill</a>
 
 <div class="m-2">
     <table id="table-users" class="table table-striped">
