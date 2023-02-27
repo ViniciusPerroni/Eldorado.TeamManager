@@ -4,7 +4,7 @@ namespace Eldorado.TeamManager.Web.Helpers
     {
         public static List<T> GetListEnum<T>()
         {
-            List<T> enumList = Enum.GetValues(typeof(T)).Cast<T>().ToList();
+            List<T> enumList = Enum.GetValues(typeof(T)).Cast<T>().OrderBy(x =>x).ToList();
 
             return enumList;
         }
