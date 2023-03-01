@@ -18,7 +18,7 @@ namespace Eldorado.TeamManager.Application.Services.Imp
 
         public IEnumerable<UserDto> ListAll()
         {
-            var users = _userRepository.GetAll();
+            var users = _userRepository.GetAll().OrderBy(u => u.FirsName);
             return _mapper.Map<List<UserDto>>(users);
         }
 

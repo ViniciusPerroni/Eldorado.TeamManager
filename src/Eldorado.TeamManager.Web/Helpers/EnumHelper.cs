@@ -2,9 +2,9 @@ namespace Eldorado.TeamManager.Web.Helpers
 {
     public class EnumHelper
     {
-        public static List<T> GetListEnum<T>()
+        public static List<string> GetListEnum<T>()
         {
-            List<T> enumList = Enum.GetValues(typeof(T)).Cast<T>().OrderBy(x =>x).ToList();
+            List<string> enumList = Enum.GetValues(typeof(T)).Cast<string>().OrderBy(x =>x).ToList();
 
             return enumList;
         }
