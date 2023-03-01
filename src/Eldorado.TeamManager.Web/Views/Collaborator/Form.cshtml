@@ -53,16 +53,22 @@
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            @foreach (var skill in Model.Skills)
-                            {
-                                if (skill.Type == SkillType.DataBase)
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
                                 {
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="@skill.Id" name="SelectedSkills">
-                                        <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
-                                    </div>
+                                    if (skill.Type == SkillType.ProgrammingLanguage)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+                                    }
+
                                 }
-                            }
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,16 +82,25 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            @foreach (var skill in Model.Skills)
-                            {
-                                if (skill.Type == SkillType.SoftwareTools)
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
                                 {
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="@skill.Id" name="SelectedSkills">
-                                        <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
-                                    </div>
+                                    if (skill.Type == SkillType.DataBase)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+
+                                    }
+
                                 }
-                            }
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -99,16 +114,24 @@
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            @foreach (var skill in Model.Skills)
-                            {
-                                if (skill.Type == SkillType.FrameWork)
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
                                 {
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="@skill.Id" name="SelectedSkills">
-                                        <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
-                                    </div>
+                                    if (skill.Type == SkillType.FrameWork)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+
+                                    }
+
                                 }
-                            }
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -122,16 +145,24 @@
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            @foreach (var skill in Model.Skills)
-                            {
-                                if (skill.Type == SkillType.DevOpsInfrastructure)
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
                                 {
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="@skill.Id" name="SelectedSkills">
-                                        <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
-                                    </div>
+                                    if (skill.Type == SkillType.SoftwareTools)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+
+                                    }
+
                                 }
-                            }
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -146,16 +177,24 @@
                         data-bs-parent="#accordionExample">
 
                         <div class="accordion-body">
-                            @foreach (var skill in Model.Skills)
-                            {
-                                if (skill.Type == SkillType.ProgrammingLanguage)
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
                                 {
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="@skill.Id" name="SelectedSkills">
-                                        <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
-                                    </div>
+                                    if (skill.Type == SkillType.Methodology)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+
+                                    }
+
                                 }
-                            }
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -169,16 +208,24 @@
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            @foreach (var skill in Model.Skills)
-                            {
-                                if (skill.Type == SkillType.Methodology)
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
                                 {
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="@skill.Id" name="SelectedSkills">
-                                        <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
-                                    </div>
+                                    if (skill.Type == SkillType.DevOpsInfrastructure)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+
+                                    }
+
                                 }
-                            }
+                            </div>
+
                         </div>
                     </div>
                 </div>
