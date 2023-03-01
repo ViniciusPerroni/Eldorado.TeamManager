@@ -64,7 +64,7 @@ li .paginate_button .page-item .active {
   margin-bottom: 10%;
 }
 
-.buttons-lixeira-voltar {
+.buttons-voltar-gravar {
   display: flex;
   flex-direction: row-reverse;
   flex: 0 0 auto;

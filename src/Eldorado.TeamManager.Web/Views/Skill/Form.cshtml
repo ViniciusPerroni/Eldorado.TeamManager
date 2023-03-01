@@ -9,7 +9,8 @@
     <div class="row mb-3">
         <div class="col-md-5">
             <label class="form-label">Nome:</label>
-            <input type="text" maxlength="30" name="Name" value="@Model.Skill.Name" required class="form-control" id="name-skill" />
+            <input type="text" maxlength="30" name="Name" value="@Model.Skill.Name" required class="form-control"
+                id="name-skill" />
         </div>
         <div class="col-md-3">
             <label class="form-label">Tipo:</label>
@@ -42,11 +43,9 @@
     </div>
 
     <div class="row">
-        <div class="col-8 buttons-lixeira-voltar">
-            <a href='@Url.Action("Index")' class="btn btn-outline-secondary ms-2"><i class="fa fa-left-long"></i>
-                Voltar</a>
-            <button type="submit" class="btn btn-secondary"  id="buttonSubmitForm" OnClick="Validate()"> <i class="fa fa-save"></i>
-                Gravar</button>
+        <div class="col-8 buttons-voltar-gravar">
+            <a href='@Url.Action("Index")' class="btn btn-outline-secondary ms-2"><i class="fa fa-left-long"></i>Voltar</a>
+            <button type="submit" class="btn btn-secondary" id="buttonSubmitForm" OnClick="Validate()"> <i class="fa fa-save"></i>Gravar</button>
         </div>
     </div>
 </form>
