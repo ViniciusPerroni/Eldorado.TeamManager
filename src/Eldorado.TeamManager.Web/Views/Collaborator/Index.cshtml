@@ -33,7 +33,7 @@
             {
                 <tr>
                     <td>@Collaborator.Name</td>
-                    <td>@Collaborator.CollaboratorSkills</td>
+                    <td>@string.Join(", ", Collaborator.CollaboratorSkills.Select(s=>s.Skill.Name).ToArray())</td>
                     <td>
                         <a href='@Url.Action("Edit", new { id = @Collaborator.Id })' class="btn btn-sm btn-secondary"
                             title="Editar"><i class="fa fa-edit"></i></a>

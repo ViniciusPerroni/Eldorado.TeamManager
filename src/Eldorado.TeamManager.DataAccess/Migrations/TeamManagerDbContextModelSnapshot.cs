@@ -62,12 +62,6 @@ namespace Eldorado.TeamManager.DataAccess.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("CodCollaborator")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CodSkill")
-                        .HasColumnType("bigint");
-
                     b.Property<long>("CollaboratorId")
                         .HasColumnType("bigint");
 

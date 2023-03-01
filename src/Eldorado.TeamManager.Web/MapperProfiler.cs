@@ -11,8 +11,8 @@ namespace Eldorado.TeamManager.Web
         {
             CreateMap<User, UserDto>();
             CreateMap<Skill, SkillDto>();
-            CreateMap<Collaborator, CollaboratorDto>();
             CreateMap<CollaboratorSkill, CollaboratorSkillDto>();
+            CreateMap<Collaborator, CollaboratorDto>();
         }
     }
 }

@@ -57,6 +57,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 
 //a rota básica da aplicação vai ser o controller=Team e a ação Index.
 app.MapControllerRoute(

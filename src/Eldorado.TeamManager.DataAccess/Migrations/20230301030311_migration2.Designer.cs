@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Eldorado.TeamManager.DataAccess.Migrations
 {
     [DbContext(typeof(TeamManagerDbContext))]
-    [Migration("20230210115238_CreateCollaborator")]
-    partial class CreateCollaborator
+    [Migration("20230301030311_migration2")]
+    partial class migration2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,12 +63,6 @@ namespace Eldorado.TeamManager.DataAccess.Migrations
                         .HasColumnType("bigint");
 
                     NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<long>("Id"));
-
-                    b.Property<long>("CodCollaborator")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("CodSkill")
-                        .HasColumnType("bigint");
 
                     b.Property<long>("CollaboratorId")
                         .HasColumnType("bigint");

@@ -21,21 +21,26 @@ namespace Eldorado.TeamManager.Application.Services.Imp
         {
             var collaborators = _collaboratorRepository.GetAll();
 
-            return _mapper.Map<List<CollaboratorDto>>(collaborators);
+            return _mapper.Map<List<CollaboratorDto>>(collaborators.ToList());
         }
 
         public async Task Create(CollaboratorDto dto)
         {
-            var collaborator = new Collaborator(dto.Name, dto.RG, dto.BirthDate.Value, dto.Email, dto.Observation, ConvertCollaboratorSkillsDto(dto.CollaboratorSkills));
+            var collaborator = new Collaborator(dto.Name, dto.RG, dto.BirthDate.Value, dto.Email, dto.Observation);
 
             await _collaboratorRepository.Create(collaborator);
+
+            collaborator.SetSkills(dto.SelectedSkills);
+
+            await _collaboratorRepository.Update(collaborator);
         }
 
         public async Task Update(CollaboratorDto dto)
         {
             var collaborator = _collaboratorRepository.GetById(dto.Id).Result;
-            collaborator.Edit(dto.Name, dto.RG, dto.BirthDate.Value, dto.Email, dto.Observation, ConvertCollaboratorSkillsDto(dto.CollaboratorSkills));
-
+            collaborator.Edit(dto.Name, dto.RG, dto.BirthDate.Value, dto.Email, dto.Observation);
+            collaborator.SetSkills(dto.SelectedSkills);
+            
             await _collaboratorRepository.Update(collaborator);
         }
 
@@ -49,20 +54,5 @@ namespace Eldorado.TeamManager.Application.Services.Imp
         {
             await _collaboratorRepository.Delete(id);
         }
-
-        private List<CollaboratorSkill> ConvertCollaboratorSkillsDto(List<CollaboratorSkillDto> dto)
-        {
-            var collaboratorSkills = new List<CollaboratorSkill>();
-
-            foreach (var item in dto)
-            {
-                var collaboratorSkill = new CollaboratorSkill(item.CodCollaborator, item.CodSkill);
-                collaboratorSkills.Add(collaboratorSkill);
-            }
-
-            return collaboratorSkills;
-        }
     }
-
 }
-
