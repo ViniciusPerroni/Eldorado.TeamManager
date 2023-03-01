@@ -18,18 +18,17 @@
                 <option value="" data-default disabled selected></option>
                 <option @(Model.Skill.Type == SkillType.DataBase ? "selected" : string.Empty) value='DataBase'>Banco
                     de Dados</option>
-                <option @(Model.Skill.Type == SkillType.ProgrammingLanguage ? "selected" : string.Empty)
-                    value='ProgrammingLanguage'>Linguagem de Programação</option>
                 <option @(Model.Skill.Type == SkillType.SoftwareTools ? "selected" : string.Empty)
                     value='SoftwareTools'>
                     Ferramentas de Software</option>
                 <option @(Model.Skill.Type == SkillType.FrameWork ? "selected" : string.Empty) value='Framework'>
-                    Framework
-                </option>
+                    Framework</option>
+                <option @(Model.Skill.Type == SkillType.DevOpsInfrastructure ? "selected" : string.Empty)
+                    value='DevOpsInfrastructure'>Infraestrutura DevOps</option>    
+                <option @(Model.Skill.Type == SkillType.ProgrammingLanguage ? "selected" : string.Empty)
+                    value='ProgrammingLanguage'>Linguagem de Programação</option>
                 <option @(Model.Skill.Type == SkillType.Methodology ? "selected" : string.Empty) value='Methodology'>
                     Metodologia</option>
-                <option @(Model.Skill.Type == SkillType.DevOpsInfrastructure ? "selected" : string.Empty)
-                    value='DevOpsInfrastructure'>Infraestrutura DevOps</option>
             </select>
         </div>
     </div>
