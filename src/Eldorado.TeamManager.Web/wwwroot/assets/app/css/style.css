@@ -50,6 +50,12 @@
   border-bottom: 2px solid black;
 }
 
+.page-title-collaborator {
+  width: 15%;
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
 .page-title-skill {
   width: 11%;
   margin-bottom: 20px;

@@ -1,6 +1,6 @@
 @model Eldorado.TeamManager.Web.Models.Collaborator.CollaboratorListViewModel
 
-<h3 class="page-title">Colaboradores</h3>
+<h3 class="page-title-collaborator">Colaboradores</h3>
 
 @if (TempData["collaboratorSave"] != null)
 {
@@ -17,7 +17,7 @@
     </div>
 }
 
-<a href='@Url.Action("Create")' class="btn btn-sm btn-secondary"></i> Novo Colaborador</i></a>
+<a href='@Url.Action("Create")' class="btn btn-sm btn-secondary mb-3 mt-1"><i class="fa fa-plus"></i> Novo Colaborador</a>
 
 <div class="m-2">
     <table id="table-users" class="table table-striped">
