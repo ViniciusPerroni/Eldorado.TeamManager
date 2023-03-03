@@ -11,6 +11,7 @@
             <label class="form-label">Nome:</label>
             <input type="text" maxlength="30" name="Name" value="@Model.Skill.Name" required class="form-control"
                 id="name-skill" />
+            <span id="spanName" hidden style="color: red">* Campo Obrigatório</span>
         </div>
         <div class="col-md-3">
             <label class="form-label">Tipo:</label>
@@ -24,7 +25,7 @@
                 <option @(Model.Skill.Type == SkillType.FrameWork ? "selected" : string.Empty) value='Framework'>
                     Framework</option>
                 <option @(Model.Skill.Type == SkillType.DevOpsInfrastructure ? "selected" : string.Empty)
-                    value='DevOpsInfrastructure'>Infraestrutura DevOps</option>    
+                    value='DevOpsInfrastructure'>Infraestrutura DevOps</option>
                 <option @(Model.Skill.Type == SkillType.ProgrammingLanguage ? "selected" : string.Empty)
                     value='ProgrammingLanguage'>Linguagem de Programação</option>
                 <option @(Model.Skill.Type == SkillType.Methodology ? "selected" : string.Empty) value='Methodology'>
@@ -38,13 +39,16 @@
             <label class="form-label">Descrição:</label>
             <textarea id="description" type="text" maxlength="120" rows="3" name="Description" required
                 class="form-control">@Model.Skill.Description</textarea>
+            <span id="spanDescription" hidden style="color: red">* Campo Obrigatório</span>
         </div>
     </div>
 
     <div class="row">
         <div class="col-8 buttons-voltar-gravar">
-            <a href='@Url.Action("Index")' class="btn btn-outline-secondary ms-2"><i class="fa fa-left-long"></i>Voltar</a>
-            <button type="submit" class="btn btn-secondary" id="buttonSubmitForm" OnClick="Validate()"> <i class="fa fa-save"></i>Gravar</button>
+            <a href='@Url.Action("Index")' class="btn btn-outline-secondary ms-2"><i
+                    class="fa fa-left-long"></i>Voltar</a>
+            <button type="submit" class="btn btn-secondary" id="buttonSubmitForm" OnClick="Validate()"> <i
+                    class="fa fa-save"></i>Gravar</button>
         </div>
     </div>
 </form>
@@ -57,7 +61,8 @@
 
         if (inputedNameSkill.trim().length === 0 || inputedDescription.trim().length === 0) {
             event.preventDefault();
-            alert("Os campos não podem ser vazios!");
+            document.getElementById("spanName").removeAttribute("hidden");
+            document.getElementById("spanDescription").removeAttribute("hidden");
         }
 
         form.addEventListener("submit", function (event) {
