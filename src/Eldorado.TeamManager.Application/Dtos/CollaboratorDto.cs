@@ -6,6 +6,7 @@ namespace Eldorado.TeamManager.Application.Dtos
         public CollaboratorDto()
         {
             SelectedSkills = new List<int>();
+            CollaboratorSkills = new List<CollaboratorSkillDto>();
         }
         
         public int Id { get; set; }
