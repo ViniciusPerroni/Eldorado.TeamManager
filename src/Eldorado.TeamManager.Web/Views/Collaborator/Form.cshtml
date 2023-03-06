@@ -6,14 +6,16 @@
 
 <h3 class="page-title-3">@(Model.Collaborator.Id == 0 ? "Novo Colaborador" : "Editar Colaborador")</h3>
 
-<form action="@Url.Action("Save")" method="post" class="g-3">
+<form action="@Url.Action("Save")" method="post" class="g-3" id="collaboratorForm">
     <input type="hidden" name="Id" value="@Model.Collaborator.Id" />
 
 
     <div class="row">
         <div class="col-sm-8 mb-3">
             <label class="form-label">Nome:</label>
-            <input type="text" name="Name" value="@Model.Collaborator.Name" required class="form-control" />
+            <input type="text" id="nameCollaborator" name="Name" value="@Model.Collaborator.Name" required
+                class="form-control" />
+            <span id="spanName" hidden style="color: red">* Campo Obrigatório</span>
         </div>
     </div>
 
@@ -29,17 +31,18 @@
         </div>
         <div class="col-md-4">
             <label class="form-label">Email:</label>
-            <input type="email" name="Email" value="@Model.Collaborator.Email" required class="form-control" />
+            <input type="email" id="CollaboratorEmail" name="Email" value="@Model.Collaborator.Email" required
+                class="form-control" />
         </div>
     </div>
     <div class="row">
         <div class="col-sm-8 mb-3">
             <label class="form-label">Observações:</label>
-            <textarea type="text" maxlength="200" rows="4" name="Observation"
-                class="form-control">@Model.Collaborator.Observation</textarea>
+            <textarea type="text" id="observation" maxlength="200" rows="4" required name="Observation"
+                class="form-control">@Model.Collaborator.Observation </textarea>
+            <span id="spanObservation" hidden style="color: red">* Campo Obrigatório</span>
         </div>
     </div>
-
 
     <h3 class="page-title-2">Skills</h3>
 
@@ -220,9 +223,10 @@
 
     <div class="row">
         <div class="col-sm-8 mb-3 buttons-voltar-gravar">
-            <a href='@Url.Action("Index")' class="btn btn-outline-secondary ms-2"><i
-                    class="fa fa-left-long"></i>Voltar</a>
-            <button type="submit" class="btn btn-secondary"><i class="fa fa-save"></i>Gravar</button>
+            <a href='@Url.Action("Index")' class="btn btn-outline-secondary ms-2"><i class="fa fa-left-long"></i>
+                Voltar</a>
+            <button type="submit" class="btn btn-secondary" OnClick="Validate()"><i class="fa fa-save"></i>
+                Gravar</button>
         </div>
     </div>
 </form>
@@ -230,7 +234,30 @@
 <script type="text/javascript">
 
     $("#data").mask("99/99/9999");
-     $("#rg").mask("99.999.999-99")
+    $("#rg").mask("99.999.999-99")
 
 </script>
 
+<script>
+    function Validate() {
+        const form = document.getElementById("collaboratorForm");
+        const inputedNameCollaborator = document.getElementById("nameCollaborator").value
+        const inputedObservation = document.getElementById("observation").value
+
+        if (inputedNameCollaborator.trim().length === 0) {
+            event.preventDefault();
+            document.getElementById("spanName").removeAttribute("hidden");
+
+        }
+
+        if (inputedObservation.trim().length === 0) {
+            event.preventDefault();
+            document.getElementById("spanObservation").removeAttribute("hidden");
+        }
+
+        form.addEventListener("submit", function (event) {
+            document.getElementById("nameCollaborator").value = inputedNameCollaborator.trim();
+            document.getElementById("observation").value = inputedObservation.trim();
+        });
+    }
+</script>
