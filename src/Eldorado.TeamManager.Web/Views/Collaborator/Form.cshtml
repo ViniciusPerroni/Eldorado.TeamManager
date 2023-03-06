@@ -41,7 +41,6 @@
             <label class="form-label">Observações:</label>
             <textarea type="text" id="observation" maxlength="200" rows="4" name="Observation"
                 class="form-control">@Model.Collaborator.Observation </textarea>
-                <span id="spanObservation" hidden style="color: red">* Preencha o Campo</span>
         </div>
     </div>
 
@@ -244,7 +243,6 @@
         const form = document.getElementById("collaboratorForm");
         const inputedNameCollaborator = document.getElementById("nameCollaborator").value
         const inputedEmail = document.getElementById("CollaboratorEmail").value
-        const inputedObservation = document.getElementById("observation").value
 
         if (inputedNameCollaborator.trim().length === 0) {
             event.preventDefault();
@@ -257,15 +255,9 @@
             document.getElementById("spanEmail").removeAttribute("hidden");
         }
 
-        if (inputedObservation.trim().length === 0) {
-            event.preventDefault();
-            document.getElementById("spanObservation").removeAttribute("hidden");
-        }
-
         form.addEventListener("submit", function (event) {
             document.getElementById("nameCollaborator").value = inputedNameCollaborator.trim();
             document.getElementById("CollaboratorEmail").value = inputedEmail.trim();
-            document.getElementById("observation").value = inputedObservation.trim();
         });
     }
 </script>
