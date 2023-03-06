@@ -31,16 +31,16 @@
         </div>
         <div class="col-md-4">
             <label class="form-label">Email:</label>
-            <input type="email" id="CollaboratorEmail" name="Email" value="@Model.Collaborator.Email" required
+            <input type="email" id="CollaboratorEmail" name="Email" value="@Model.Collaborator.Email"
                 class="form-control" />
+            <span id="spanEmail" hidden style="color: red">* Campo Obrigatório</span>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-8 mb-3">
             <label class="form-label">Observações:</label>
-            <textarea type="text" id="observation" maxlength="200" rows="4" required name="Observation"
+            <textarea type="text" id="observation" maxlength="200" rows="4" name="Observation"
                 class="form-control">@Model.Collaborator.Observation </textarea>
-            <span id="spanObservation" hidden style="color: red">* Campo Obrigatório</span>
         </div>
     </div>
 
@@ -242,7 +242,7 @@
     function Validate() {
         const form = document.getElementById("collaboratorForm");
         const inputedNameCollaborator = document.getElementById("nameCollaborator").value
-        const inputedObservation = document.getElementById("observation").value
+        const inputedEmail = document.getElementById("CollaboratorEmail").value
 
         if (inputedNameCollaborator.trim().length === 0) {
             event.preventDefault();
@@ -250,14 +250,15 @@
 
         }
 
-        if (inputedObservation.trim().length === 0) {
+        if (inputedEmail.trim().length === 0) {
             event.preventDefault();
-            document.getElementById("spanObservation").removeAttribute("hidden");
+            document.getElementById("spanEmail").removeAttribute("hidden");
         }
+
 
         form.addEventListener("submit", function (event) {
             document.getElementById("nameCollaborator").value = inputedNameCollaborator.trim();
-            document.getElementById("observation").value = inputedObservation.trim();
+            document.getElementById("CollaboratorEmail").value = inputedEmail.trim();
         });
     }
 </script>
