@@ -1,0 +1,209 @@
+@using Eldorado.TeamManager.Domain.Enums
+@model Eldorado.TeamManager.Web.Models.Team.TeamViewModel
+
+<h3 class="page-title-3">@(Model.Team.Id == 0 ? "Nova Equipe" : "Editar Equipe")</h3>
+
+<form action="@Url.Action("Save")" method="post" class="g-3" id="teamForm">
+    <input type="hidden" name="Id" value="@Model.Team.Id" />
+
+    <div class="row">
+        <div class="col-sm-8 mb-3">
+            <label class="form-label">Nome:</label>
+            <input type="text" id="teamName" name="Name" value="@Model.Team.TeamName" required class="form-control" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 mb-3">
+            <label class="form-label">Avatar:</label>
+            <input type="file" id="avatar" name="Avatar" value="@Model.Team.Avatar" required class="form-control" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 mb-3">
+            <label class="form-label">Observações:</label>
+            <textarea type="text" id="teamObservation" maxlength="200" rows="4" name="TeamObservation"
+                class="form-control">@Model.Team.TeamObservation </textarea>
+        </div>
+    </div>
+
+    <h3 class="page-title-2">Skills</h3>
+
+    <div class="row">
+        <div class="col-sm-8 mb-3">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Banco de Dados
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    if (skill.Type == SkillType.DataBase)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty)
+                                                value="@skill.Id" name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Ferramentas de Software
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    if (skill.Type == SkillType.SoftwareTools)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Frameworks
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    if (skill.Type == SkillType.FrameWork)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Infraestrutura DevOps
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    if (skill.Type == SkillType.DevOpsInfrastructure)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Linguagens de Programação
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    if (skill.Type == SkillType.ProgrammingLanguage)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Metodologia
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row">
+                                @foreach (var skill in Model.Skills)
+                                {
+                                    if (skill.Type == SkillType.Methodology)
+                                    {
+                                        <div class="col-md-4">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                    name="SelectedSkills">
+                                                <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</form>

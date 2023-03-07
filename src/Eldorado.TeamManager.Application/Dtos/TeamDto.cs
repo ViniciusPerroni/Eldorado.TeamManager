@@ -6,15 +6,16 @@ namespace Eldorado.TeamManager.Application.Dtos
         public TeamDto()
         {
             SelectedSkills = new List<int>();
-            TeamSkills = new List<TeamSkillDto>();
+            Skills = new List<SkillDto>();
         }
 
         public int Id { get; set; }
         public string TeamName { get; set; }
         public string Avatar { get; set; }
         public string TeamObservation { get; set; }
-        public List<TeamSkillDto> TeamSkills { get; set; }
+        public List<SkillDto> Skills { get; set; }
         public List<int> SelectedSkills { get; set; }
+       
     }
 
 }

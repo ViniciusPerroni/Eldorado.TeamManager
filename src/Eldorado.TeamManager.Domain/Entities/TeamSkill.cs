@@ -5,14 +5,14 @@ namespace Eldorado.TeamManager.Domain.Entities
         public TeamSkill()
         {          
         }
-        public TeamSkill(long teamId, long teamSkillId)
+        public TeamSkill(long teamId, long skillId)
         {
             TeamId = teamId;
-            TeamSkillId = teamSkillId;
+            SkillId = skillId;
         }
-        public long TeamSkillId { get; set; }
-        public virtual Team team { get; set; }
-        public long TeamSkillId { get; set; }
-        public virtual TeamSkill teamSkill { get; set; }
+        public long TeamId { get; set; }
+        public virtual Team Team { get; set; }
+        public long SkillId { get; set; }
+        public virtual Skill Skill { get; set; }
     }
 }

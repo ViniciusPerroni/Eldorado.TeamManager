@@ -1,6 +1,5 @@
 using Eldorado.TeamManager.Application.Dtos;
 using Eldorado.TeamManager.Application.Services;
-using Eldorado.TeamManager.Domain.Entities;
 using Eldorado.TeamManager.Web.Models.Collaborator;
 
 using Microsoft.AspNetCore.Mvc;
@@ -75,5 +74,3 @@ namespace Eldorado.TeamManager.Web.Controllers
 
     }
 }
-
-

@@ -8,6 +8,7 @@ namespace Eldorado.TeamManager.Application.Dtos
         public string Name { get; set; }
         public string Description { get; set; }
         public SkillType Type { get; set; }
+        public long SkillId { get; set; }
 
 
     }

@@ -12,11 +12,10 @@ namespace Eldorado.TeamManager.Domain.Entities
             TeamObservation = teamObservation;
         }
 
-
         public string TeamName { get; set; }
         public string Avatar { get; set; }
         public string TeamObservation { get; set; }
-        public virtual List<TeamSkill> TeamSkills { get; set; }
+        public List<TeamSkill> TeamSkills { get; set; }
 
         public void Edit(string teamName, string avatar, string teamObservation)
         {
