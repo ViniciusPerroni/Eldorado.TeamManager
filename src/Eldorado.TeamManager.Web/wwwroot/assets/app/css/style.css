@@ -81,3 +81,16 @@ li .paginate_button .page-item .active {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
+.button-Card {
+  width: 88px;
+  padding: 3px;
+  height: 33px;
+  font-size: 15px;
+  color: white;
+  background-color: gray;
+  border: none;
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}

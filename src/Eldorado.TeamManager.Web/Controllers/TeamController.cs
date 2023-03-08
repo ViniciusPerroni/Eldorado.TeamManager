@@ -21,7 +21,7 @@ namespace Eldorado.TeamManager.Web.Controllers
         public IActionResult Index()
         {
             var viewModel = new TeamListViewModel();
-            viewModel.Teams = _teamService.ListAll();
+           // viewModel.Teams = _teamService.ListAll();
 
             return View(viewModel);
         }
