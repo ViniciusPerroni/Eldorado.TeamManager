@@ -1,21 +1,18 @@
 namespace Eldorado.TeamManager.Application.Dtos
 {
-
     public class TeamDto
     {
         public TeamDto()
         {
             SelectedSkills = new List<int>();
-            Skills = new List<SkillDto>();
+            TeamSkills = new List<TeamSkillDto>();
         }
 
         public int Id { get; set; }
-        public string TeamName { get; set; }
-        public string Avatar { get; set; }
-        public string TeamObservation { get; set; }
-        public List<SkillDto> Skills { get; set; }
+        public string Name { get; set; }
+        public string PathAvatar { get; set; }
+        public string Observation { get; set; }
+        public List<TeamSkillDto> TeamSkills { get; set; }
         public List<int> SelectedSkills { get; set; }
-       
     }
-
 }

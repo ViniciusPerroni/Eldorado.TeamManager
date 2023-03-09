@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Eldorado.TeamManager.DataAccess.Configurations
 {
-    public class TeamConiguration : IEntityTypeConfiguration<Team>
+    public class TeamSkillConiguration : IEntityTypeConfiguration<TeamSkill>
     {
-        public void Configure(EntityTypeBuilder<Team> builder)
+        public void Configure(EntityTypeBuilder<TeamSkill> builder)
         {
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id).ValueGeneratedOnAdd();

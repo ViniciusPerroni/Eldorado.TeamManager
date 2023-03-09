@@ -7,5 +7,4 @@ namespace Eldorado.TeamManager.Application.Dtos
         public long SkillId { get; set; }
 
     }
-
 }

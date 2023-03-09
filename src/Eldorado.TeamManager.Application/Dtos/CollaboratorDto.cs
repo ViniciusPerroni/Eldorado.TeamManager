@@ -14,7 +14,7 @@ namespace Eldorado.TeamManager.Application.Dtos
         public string RG { get; set; }
         public DateTime? BirthDate { get; set; }
         public string Email { get; set; }
-        public string Observation { get; set; }
+        public string? Observation { get; set; }
         public List<CollaboratorSkillDto> CollaboratorSkills{ get; set; }
         public List<int> SelectedSkills { get; set; }
     }

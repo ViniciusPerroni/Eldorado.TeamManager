@@ -1,27 +1,26 @@
 namespace Eldorado.TeamManager.Domain.Entities
 {
-
     public class Team : BaseEntity
     {
         public Team() { }
 
-        public Team(string teamName, string avatar, string teamObservation)
+        public Team(string name, string pathAvatar, string observation)
         {
-            TeamName = teamName;
-            Avatar = avatar;
-            TeamObservation = teamObservation;
+            Name = name;
+            PathAvatar = pathAvatar;
+            Observation = observation;
         }
 
-        public string TeamName { get; set; }
-        public string Avatar { get; set; }
-        public string TeamObservation { get; set; }
+        public string Name { get; set; }
+        public string PathAvatar { get; set; }
+        public string Observation { get; set; }
         public virtual List<TeamSkill> TeamSkills { get; set; }
-
-        public void Edit(string teamName, string avatar, string teamObservation)
+        
+        public void Edit(string name, string pathAvatar, string observation)
         {
-            TeamName = teamName;
-            Avatar = avatar;
-            TeamObservation = teamObservation;
+            Name = name;
+            PathAvatar = pathAvatar;
+            Observation = observation;
         }
 
         public void SetTeamSkills(List<int> teamSkillsIds)

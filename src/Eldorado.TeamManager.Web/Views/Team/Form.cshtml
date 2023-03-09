@@ -9,22 +9,22 @@
     <div class="row">
         <div class="col-sm-8 mb-3">
             <label class="form-label">Nome:</label>
-            <input type="text" id="teamName" name="Name" value="@Model.Team.TeamName" required class="form-control" />
+            <input type="text" id="teamName" name="Name" value="@Model.Team.Name" required class="form-control" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-8 mb-3">
             <label class="form-label">Avatar:</label>
-            <input type="file" id="avatar" name="Avatar" value="@Model.Team.Avatar" required class="form-control" />
+            <input type="file" id="avatar" name="Avatar" value="@Model.Team.PathAvatar" required class="form-control" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-8 mb-3">
             <label class="form-label">Observações:</label>
-            <textarea type="text" id="teamObservation" maxlength="200" rows="4" name="TeamObservation"
-                class="form-control">@Model.Team.TeamObservation </textarea>
+            <textarea type="text" id="teamObservation" maxlength="200" rows="4" name="Observation"
+                class="form-control">@Model.Team.Observation </textarea>
         </div>
     </div>
 
@@ -50,7 +50,7 @@
                                     {
                                         <div class="col-md-4">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty)
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.TeamSkills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty)
                                                 value="@skill.Id" name="SelectedSkills">
                                                 <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
                                             </div>
@@ -78,7 +78,7 @@
                                     {
                                         <div class="col-md-4">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.TeamSkills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
                                                     name="SelectedSkills">
                                                 <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
                                             </div>
@@ -106,7 +106,7 @@
                                     {
                                         <div class="col-md-4">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.TeamSkills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
                                                     name="SelectedSkills">
                                                 <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
                                             </div>
@@ -134,7 +134,7 @@
                                     {
                                         <div class="col-md-4">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.TeamSkills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
                                                     name="SelectedSkills">
                                                 <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
                                             </div>
@@ -162,7 +162,7 @@
                                     {
                                         <div class="col-md-4">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.TeamSkills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
                                                     name="SelectedSkills">
                                                 <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
                                             </div>
@@ -190,7 +190,7 @@
                                     {
                                         <div class="col-md-4">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" @(Model.Team.Skills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
+                                                <input class="form-check-input" type="checkbox" @(Model.Team.TeamSkills.Count(x=>x.SkillId == skill.Id) > 0 ? "checked" : string.Empty) value="@skill.Id"
                                                     name="SelectedSkills">
                                                 <label class="form-check-label" for="inlineCheckbox1">@skill.Name</label>
                                             </div>

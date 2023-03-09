@@ -26,7 +26,7 @@ namespace Eldorado.TeamManager.Application.Services.Imp
         }
         public async Task Create(TeamDto dto)
         {
-            var team = new Team(dto.TeamName, dto.Avatar, dto.TeamObservation);
+            var team = new Team(dto.Name, dto.PathAvatar, dto.Observation);
 
             await _teamRepository.Create(team);
 
@@ -37,7 +37,7 @@ namespace Eldorado.TeamManager.Application.Services.Imp
         public async Task Update(TeamDto dto)
         {
             var team = _teamRepository.GetById(dto.Id).Result;
-            team.Edit(dto.TeamName, dto.Avatar, dto.TeamObservation);
+            team.Edit(dto.Name, dto.PathAvatar, dto.Observation);
             team.SetTeamSkills(dto.SelectedSkills);
 
             await _teamRepository.Update(team);

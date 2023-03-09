@@ -5,7 +5,7 @@ namespace Eldorado.TeamManager.Domain.Entities
     {
         public Collaborator() { }
 
-        public Collaborator(string name, string rg, DateTime birthDate, string email, string observation)
+        public Collaborator(string name, string rg, DateTime birthDate, string email, string? observation)
         {
             Name = name;
             RG = rg;
@@ -18,10 +18,10 @@ namespace Eldorado.TeamManager.Domain.Entities
         public string RG { get; set; }
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public string Observation { get; set; }
+        public string? Observation { get; set; }
         public virtual List<CollaboratorSkill> CollaboratorSkills { get; set; }
 
-        public void Edit(string name, string rg, DateTime birthDate, string email, string observation)
+        public void Edit(string name, string rg, DateTime birthDate, string email, string? observation)
         {
             Name = name;
             RG = rg;
