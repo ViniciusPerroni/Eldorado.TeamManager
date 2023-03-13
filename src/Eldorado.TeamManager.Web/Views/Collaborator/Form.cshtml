@@ -6,7 +6,7 @@
 
 <h3 class="page-title-3">@(Model.Collaborator.Id == 0 ? "Novo Colaborador" : "Editar Colaborador")</h3>
 
-<form action="@Url.Action("Save")" method="post" class="g-3" id="collaboratorForm">
+<form action='@Url.Action("Save")' method="post" class="g-3" id="collaboratorForm">
     <input type="hidden" name="Id" value="@Model.Collaborator.Id" />
 
 

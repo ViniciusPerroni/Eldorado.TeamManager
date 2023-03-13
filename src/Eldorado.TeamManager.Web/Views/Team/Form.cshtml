@@ -3,7 +3,7 @@
 
 <h3 class="page-title-3">@(Model.Team.Id == 0 ? "Nova Equipe" : "Editar Equipe")</h3>
 
-<form action="@Url.Action("Save")" method="post" class="g-3" id="teamForm">
+<form action="@Url.Action("Save")" method="post" class="g-3" id="teamForm" enctype="multipart/form-data">
     <input type="hidden" name="Id" value="@Model.Team.Id" />
 
     <div class="row">
