@@ -1,0 +1,49 @@
+@model Eldorado.TeamManager.Web.Models.TeamCollaborator.TeamCollaboratorListViewModel
+
+<h3 class="page-title-collaborator">Integrantes</h3>
+
+@if (TempData["collaboratorSave"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>OK!</strong> @TempData["collaboratorSave"]
+        <button type="button" class="btn-close" data-bs-dimiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+<a href='@Url.Action("Create")' class="btn btn-sm btn-secondary mb-3 mt-1"><i class="fa fa-plus"></i> Novo Integrante</a>
+
+<div class="m-2">
+    <table id="table-users" class="table table-striped">
+        <col style="width: 25%;" />
+        <col style="width: 65%;" />
+        <col style="width: 10%;" />
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Skills</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var TeamCollaborator in Model.TeamCollaborators)
+            {
+                <tr>
+                    <td>@TeamCollaborator.CollaboratorId</td>
+                    <td>@TeamCollaborator.SkillId</td>
+                    <td>
+                        <a href='@Url.Action("Delete", new { id = @TeamCollaborator.Id })' class="btn btn-sm btn-secondary"
+                            title="Apagar"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            initDataTable("table-users");
+        });
+    </script>
+}
