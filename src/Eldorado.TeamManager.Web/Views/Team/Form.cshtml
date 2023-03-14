@@ -1,7 +1,7 @@
 @using Eldorado.TeamManager.Domain.Enums
 @model Eldorado.TeamManager.Web.Models.Team.TeamViewModel
 
-<h3 class="page-title-3">@(Model.Team.Id == 0 ? "Nova Equipe" : "Editar Equipe")</h3>
+<h3 class="page-title-3" style="width: 14%;">@(Model.Team.Id == 0 ? "Nova Equipe" : "Editar Equipe")</h3>
 
 <form action="@Url.Action("Save")" method="post" class="g-3" id="teamForm" enctype="multipart/form-data">
     <input type="hidden" name="Id" value="@Model.Team.Id" />
@@ -14,7 +14,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-8 mb-3">
+        <div class="col-sm-5 mb-3">
             <label class="form-label">Avatar:</label>
             <input type="file" id="avatar" name="Avatar" value="@Model.Team.PathAvatar" required class="form-control" />
         </div>
