@@ -3,7 +3,7 @@
 
 <h3 class="page-title-3" style="width: 14%;">@(Model.Team.Id == 0 ? "Nova Equipe" : "Editar Equipe")</h3>
 
-<form action="@Url.Action("Save")" method="post" class="g-3" id="teamForm" enctype="multipart/form-data">
+<form action='@Url.Action("UploadFile")' method="post" class="g-3" id="teamForm" enctype="multipart/form-data">
     <input type="hidden" name="Id" value="@Model.Team.Id" />
 
     <div class="row">
@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-sm-5 mb-3">
             <label class="form-label">Avatar:</label>
-            <input type="file" id="avatar" name="Avatar" value="@Model.Team.PathAvatar" required class="form-control" />
+            <input type="file" id="avatar" name="PathAvatar" value="@Model.Team.PathAvatar" required class="form-control" />
         </div>
     </div>
 
@@ -209,7 +209,7 @@
         <div class="col-sm-8 mb-3 buttons-voltar-gravar">
             <a href='@Url.Action("Index")' class="btn btn-outline-secondary ms-2"><i class="fa fa-left-long"></i>
                 Voltar</a>
-            <button type="submit" class="btn btn-secondary" OnClick="Validate()"><i class="fa fa-save"></i>
+            <button type="submit" class="btn btn-secondary"><i class="fa fa-save"></i>
                 Gravar</button>
         </div>
     </div>

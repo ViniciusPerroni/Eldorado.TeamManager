@@ -46,6 +46,9 @@ namespace Eldorado.TeamManager.Web.Controllers
 
         public async Task<IActionResult> Save(TeamDto team)
         {
+
+
+
             if (team.Id == 0)
             {
                 await _teamService.Create(team);
@@ -72,6 +75,35 @@ namespace Eldorado.TeamManager.Web.Controllers
         private void LoadSkills(TeamViewModel model)
         {
             model.Skills = _skillService.ListAll().ToList();
+        }
+
+        public async Task<IActionResult> UploadFileAsync(IFormFile PathAvatar)
+        {
+
+            string fileName = PathAvatar.FileName;
+            fileName = Path.GetFileName(fileName);
+            //extension = Path.GetExtension(fileName);
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\assets\\uploadFiles", fileName);
+
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await PathAvatar.CopyToAsync(fileStream);
+
+            }
+            //separar a extensão do arquivo do nome do arquivo ex: img.png
+            //gerar um nome aleatório para o arquivo
+            //salvar arquivo com nome aleatório mais a extensão
+
+
+
+
+
+
+
+
+            return RedirectToAction("Index");
+
         }
     }
 }
