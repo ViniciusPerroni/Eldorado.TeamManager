@@ -81,9 +81,13 @@ namespace Eldorado.TeamManager.Web.Controllers
         {
 
             string fileName = PathAvatar.FileName;
-            fileName = Path.GetFileName(fileName);
-            //extension = Path.GetExtension(fileName);
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\assets\\uploadFiles", fileName);
+            fileName = Path.GetFileName(fileName); //nome do arquivo
+            string imageExtension = Path.GetExtension(fileName); //armazena extensão
+            string image = Path.GetFileNameWithoutExtension(fileName); //armazena nome do arquivo sem extensão
+
+            string randomName = Path.GetRandomFileName(); // armazena nome aleatório
+            string randomNameWithoutExtension = Path.GetFileNameWithoutExtension(randomName); //armazena nome aleatório sem extensão
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\assets\\uploadFiles", randomNameWithoutExtension, imageExtension);
 
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
