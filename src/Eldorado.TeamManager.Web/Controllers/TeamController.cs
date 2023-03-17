@@ -81,31 +81,18 @@ namespace Eldorado.TeamManager.Web.Controllers
         {
 
             string fileName = PathAvatar.FileName;
-            fileName = Path.GetFileName(fileName); //nome do arquivo
-            string imageExtension = Path.GetExtension(fileName); //armazena extensão
-            string image = Path.GetFileNameWithoutExtension(fileName); //armazena nome do arquivo sem extensão
-
-            string randomName = Path.GetRandomFileName(); // armazena nome aleatório
-            string randomNameWithoutExtension = Path.GetFileNameWithoutExtension(randomName); //armazena nome aleatório sem extensão
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\assets\\uploadFiles", randomNameWithoutExtension, imageExtension);
-
+            fileName = Path.GetFileName(fileName);
+            string imageExtension = Path.GetExtension(fileName);
+            string randomName = Path.GetRandomFileName();
+            string randomNameWithoutExtension = Path.GetFileNameWithoutExtension(randomName);
+            string randomNameWithExtension = randomNameWithoutExtension + imageExtension;
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\assets\\uploadFiles", randomNameWithExtension);
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
                 await PathAvatar.CopyToAsync(fileStream);
 
             }
-            //separar a extensão do arquivo do nome do arquivo ex: img.png
-            //gerar um nome aleatório para o arquivo
-            //salvar arquivo com nome aleatório mais a extensão
-
-
-
-
-
-
-
-
             return RedirectToAction("Index");
 
         }
