@@ -34,10 +34,6 @@ namespace Eldorado.TeamManager.Domain.Entities
             {
                 TeamSkills.Add(new TeamSkill(Id, teamSkillId));
             }
-
         }
-
     }
-
-
 }

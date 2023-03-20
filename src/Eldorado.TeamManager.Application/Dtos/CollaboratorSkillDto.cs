@@ -8,5 +8,4 @@ namespace Eldorado.TeamManager.Application.Dtos
         public SkillDto Skill { get; set; }
 
     }
-
 }

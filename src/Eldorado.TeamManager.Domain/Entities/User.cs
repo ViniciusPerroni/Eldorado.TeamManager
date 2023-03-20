@@ -2,7 +2,6 @@
 
 namespace Eldorado.TeamManager.Domain.Entities
 {
-    //Teste
     public class User : BaseEntity
     {
         public User() { }

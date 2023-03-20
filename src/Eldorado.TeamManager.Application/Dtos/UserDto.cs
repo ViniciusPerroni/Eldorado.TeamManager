@@ -11,6 +11,5 @@ namespace Eldorado.TeamManager.Application.Dtos
         public string Password { get; set; }
         public UserType Type { get; set; }
         public bool Active { get; set; }
-
     }
 }
