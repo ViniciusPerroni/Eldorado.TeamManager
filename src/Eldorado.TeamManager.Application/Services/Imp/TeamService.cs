@@ -53,5 +53,23 @@ namespace Eldorado.TeamManager.Application.Services.Imp
         {
             await _teamRepository.Delete(id);
         }
+
+        public async Task AddCollaborator(long teamId, long collaboratorId)
+        {
+            var team = await _teamRepository.GetById((int)teamId);
+            var teamCollaborator = new TeamCollaborator(collaboratorId, team.Id);
+
+            team.TeamCollaborators.Add(teamCollaborator);
+            await _teamRepository.Update(team);
+        }
+
+        public async Task DeleteCollaborator(long teamId, long teamCollaboratorId)
+        {
+            var team = await _teamRepository.GetById((int)teamId);
+            var teamCollaborator = team.TeamCollaborators.FirstOrDefault(tc => tc.Id == teamCollaboratorId);
+
+            team.TeamCollaborators.Remove(teamCollaborator);
+            await _teamRepository.Update(team);
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Eldorado.TeamManager.Domain.Entities
         public string PathAvatar { get; set; }
         public string Observation { get; set; }
         public virtual List<TeamSkill> TeamSkills { get; set; }
-        
+        public virtual List<TeamCollaborator> TeamCollaborators { get; set; }
         public void Edit(string name, string pathAvatar, string observation)
         {
             Name = name;

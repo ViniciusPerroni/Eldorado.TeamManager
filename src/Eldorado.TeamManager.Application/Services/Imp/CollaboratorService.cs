@@ -3,6 +3,7 @@ using Eldorado.TeamManager.Application.Dtos;
 using Eldorado.TeamManager.Domain.Entities;
 using Eldorado.TeamManager.Domain.Repositories;
 
+using System.Linq;
 
 namespace Eldorado.TeamManager.Application.Services.Imp
 {
@@ -53,6 +54,14 @@ namespace Eldorado.TeamManager.Application.Services.Imp
         public async Task Delete(int id)
         {
             await _collaboratorRepository.Delete(id);
+        }
+
+        public IEnumerable<CollaboratorDto> ListBySkillId(long[] skillIds)
+        {
+            var collaborators = _collaboratorRepository.GetAll()
+                .Where(c=> c.CollaboratorSkills.Any(cs => skillIds.ToList().Contains(cs.SkillId)));
+
+            return _mapper.Map<List<CollaboratorDto>>(collaborators.ToList());
         }
     }
 }

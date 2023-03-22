@@ -9,5 +9,7 @@ namespace Eldorado.TeamManager.Application.Services
         Task Delete(int id);
         IEnumerable<TeamDto> ListAll();
         Task<TeamDto> GetById(int id);
+        Task AddCollaborator(long teamId, long collaboratorId);
+        Task DeleteCollaborator(long teamId, long teamCollaboratorId);
     }
 }

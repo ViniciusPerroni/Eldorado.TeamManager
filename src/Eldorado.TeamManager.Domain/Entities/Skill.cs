@@ -6,6 +6,14 @@ namespace Eldorado.TeamManager.Domain.Entities
     {
         public Skill() { }
 
+        public Skill(long id, string name, string description, SkillType type)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            Type = type;
+        }
+
         public Skill(string name, string description, SkillType type)
         {
             Name = name;

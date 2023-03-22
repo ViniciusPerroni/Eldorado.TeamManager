@@ -7,8 +7,11 @@ namespace Eldorado.TeamManager.Web.Models.TeamCollaborator
         public TeamCollaboratorListViewModel()
         {
             TeamCollaborators = new List<TeamCollaboratorDto>();
+            Collaborators = new List<CollaboratorDto>();
         }
         
-        public IEnumerable<TeamCollaboratorDto> TeamCollaborators { get; set; }
+        public long TeamId { get; set; }
+        public List<TeamCollaboratorDto> TeamCollaborators { get; set; }
+        public List<CollaboratorDto> Collaborators { get; set; }
     }
 }
